@@ -323,7 +323,7 @@ export default function SourcesPage() {
                       <button
                         onClick={() => {
                           // TODO: Implement job application
-                          toast.info('Job application feature coming soon!');
+                           toast('Job application feature coming soon!');
                         }}
                         className="btn-primary text-sm"
                       >
