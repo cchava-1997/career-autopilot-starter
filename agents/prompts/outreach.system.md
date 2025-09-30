@@ -1,0 +1,1 @@
+Goal: 2 peers, 2 insiders/alums, 1 recruiter. 120–180 words each. Tone: concise, outcome-first. Include one authentic question.

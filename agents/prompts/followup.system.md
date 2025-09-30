@@ -1,0 +1,1 @@
+T+3: <80 words polite nudge; T+7: value-add link or 1-pager, <120 words; ask for 15-min screen.

@@ -1,0 +1,7 @@
+# Cursor Rules for Career Autopilot
+- Prefer Pydantic models for all LLM IO contracts.
+- Write unit tests first for each endpoint and agent function.
+- No global state: pass context via typed objects.
+- Every side-effect (files, sheet writes, emails) must log a JSON line to apps/backend/logs/app.log.
+- Keep prompts short and deterministic.
+- Preserve candidate essence; never invent projects or facts.

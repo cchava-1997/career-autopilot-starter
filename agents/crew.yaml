@@ -1,0 +1,43 @@
+process: sequential
+agents:
+  - id: jd_matcher
+    role: "JD Matcher"
+    goal: "Score fit and produce minimal rewrites preserving essence."
+    tools: ["sheets_stub"]
+    llm: "openai:gpt-4o-mini"
+
+  - id: apply_pack
+    role: "Apply Pack Assembler"
+    goal: "Render bullet trio + cover."
+    tools: []
+    llm: "openai:gpt-4o-mini"
+
+  - id: outreach_planner
+    role: "Outreach Planner"
+    goal: "Create 2+2+1 outreach and drafts."
+    tools: ["sheets_stub","gmail_stub"]
+    llm: "openai:gpt-4o-mini"
+
+  - id: day_summarizer
+    role: "Summarizer"
+    goal: "Compile daily stats from Sheets and output digest."
+    tools: ["sheets_stub"]
+    llm: "openai:gpt-4o-mini"
+
+tasks:
+  - id: match_and_apply
+    description: "Given resume+JD, compute match and generate apply pack."
+    agent: jd_matcher
+    next: ["assemble_apply_pack", "plan_outreach"]
+
+  - id: assemble_apply_pack
+    description: "Render final bullet trio + cover."
+    agent: apply_pack
+
+  - id: plan_outreach
+    description: "Create outreach plan and drafts; store to Sheets."
+    agent: outreach_planner
+
+  - id: daily_summary
+    description: "Compile daily digest from Sheets."
+    agent: day_summarizer

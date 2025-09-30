@@ -1,0 +1,1 @@
+Return exactly 6 lines as per daily digest format.
